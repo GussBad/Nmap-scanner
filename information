@@ -1,0 +1,35 @@
+Saturn Nmap Scanner
+GitHub stars
+GitHub forks
+GitHub license
+GitHub issues
+
+Saturn Nmap Scanner is an efficient network scanning tool, leveraging the power of the Nmap library. This user-friendly command-line application empowers users to explore and evaluate networks, providing essential information about devices and services running on a host or network.
+
+#Features:
+TCP Port Scanning (SYN ACK Scan): Quickly discover open ports and services using SYN ACK scanning.
+
+UDP Port Scanning: Identify services that rely on UDP transport, enabling you to explore less common services.
+
+Comprehensive Scanning: Get in-depth insights by running a comprehensive scan, including service version detection, scripting, OS detection, and more.
+
+User-Friendly Interface: The interactive interface allows users to select scan types effortlessly and enter target IP addresses.
+
+Convenient Termination: Users can exit the program at any time, making it accessible for on-demand scans.
+
+**Usage**:
+Execute the Python program Scanner.py in your terminal.
+Input the target host's IP address.
+Select the desired scan type (SYN ACK, UDP, or Comprehensive) by entering the corresponding number.
+Access the scan results, which include information about open ports and services.
+Requirements:
+Python 3.x
+Nmap Library
+License:
+This project is distributed under the [Your choice of license here] license, granting others the freedom to use and contribute.
+
+#Contributions:
+Your contributions are valuable! Collaborate, report issues, or propose enhancements to this project.
+
+#Getting Started
+To get started, simply clone the repository and run the Scanner.py script. Feel free to explore, provide feedback, and contribute to this open-source project.
