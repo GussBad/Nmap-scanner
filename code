@@ -1,0 +1,51 @@
+import nmap
+
+scanner = nmap.PortScanner()
+print('-' * 60)  
+print("Saturn Nmap - Scanner *")
+print('-' * 60)
+
+ip_addr = input("Enter the Ip Address you want to scan: ")
+print("The Ip address you entered is: ", ip_addr)
+type(ip_addr)
+resp = input("""  \nPlease enter the type of scan you want to run 
+                   1)SYN ACK Scan
+                   2)UDP Scan
+                   3)Comprehensive Scan\n""" )
+print("You have selected option: ", resp)
+
+if resp == '1':
+    print("Nmap Version: ", scanner.nmap_version())
+    scanner.scan(ip_addr, '1-1024', '-v -sS')
+    print(scanner.scaninfo())
+    print("Ip Status: ", scanner[ip_addr].state())
+    protocols = scanner[ip_addr].all_protocols()
+    if 'tcp' in protocols:
+        print("Open Ports (TCP): ", scanner[ip_addr]['tcp'].keys())
+    else:
+        print("No open TCP ports found.")
+
+elif resp == '2':
+    print("Nmap Version: ", scanner.nmap_version())
+    scanner.scan(ip_addr, '1-1024', '-v -sU')
+    print(scanner.scaninfo())
+    print("Ip Status: ", scanner[ip_addr].state())
+    protocols = scanner[ip_addr].all_protocols()
+    if 'udp' in protocols:
+        print("Open Ports (UDP): ", scanner[ip_addr]['udp'].keys())
+    else:
+        print("No open UDP ports found.")
+
+elif resp == '3':
+    print("Nmap Version: ", scanner.nmap_version())
+    scanner.scan(ip_addr, '1-1024' '-v -sS -sV -sC -A -O')
+    print(scanner.scaninfo())
+    print("Ip Status: ", scanner[ip_addr].state())
+    protocols = scanner[ip_addr].all_protocols()
+    if 'tcp' in protocols:
+        print("Open Ports (TCP): ", scanner[ip_addr]['tcp'].keys())
+    else:
+        print("No open TCP ports found.")
+
+elif resp >= '4':
+    print("Please enter a valid option")
